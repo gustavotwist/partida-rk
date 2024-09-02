@@ -1,0 +1,4 @@
+
+function calculoDePartidas(vitorias, derrotas) {
+
+}
