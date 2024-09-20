@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Classificação de Partidas</title>
+</head>
+<body>
+    <h1>Calculadora de Classificação de Partidas</h1>
+    
+    <input type="number" id="vitorias" placeholder="Digite o número de vitórias" />
+    <button id="calcular">Calcular Classificação</button>
+
+    <h2>Classificação: <span id="classificacao"></span></h2>
+
+    <script>
+        function calculoDePartidas(vitorias) {
+            if (vitorias < 0) {
+                return 'Número de vitórias inválido';
+            }
+            if (vitorias < 10) {
+                return 'ferro';
+            } else if (vitorias <= 20) {
+                return 'bronze';
+            } else if (vitorias <= 50) {
+                return 'prata';
+            } else if (vitorias <= 80) {
+                return 'ouro';
+            } else if (vitorias <= 90) {
+                return 'diamante';
+            } else if (vitorias <= 100) {
+                return 'lendário';
+            } else {
+                return 'imortal';
+            }
+        }
+
+        document.getElementById('calcular').addEventListener('click', () => {
+            const vitorias = parseInt(document.getElementById('vitorias').value);
+            const classificacao = calculoDePartidas(vitorias);
+            document.getElementById('classificacao').textContent = classificacao;
+        });
+    </script>
+</body>
+</html>
